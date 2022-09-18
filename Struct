@@ -1,0 +1,18 @@
+#include <stdio.h>
+//typedef int VALOR; ------ é como se mudasse o nome do int para Valor
+//struct Aluno InsereDadosAluno
+
+typedef struct Aluno{
+  int idade;
+  int RA;
+  int NumeroCartaoCredito;
+  int TresNumerosAtras;
+  int DataDeValidade;
+  int Senha;
+} ALUNO; //<---- aqui esta o final do typedef
+int main(void) {
+  struct Aluno aluno;
+  aluno.idade = 25;
+  aluno.RA = 1214;
+  return 0;
+}
