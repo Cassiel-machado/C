@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  int par = 0;
+  int i;
+  while(par!=3){
+    scanf("%d", &i);
+    if(i % 2 == 0){
+      par++;
+    }
+  }
+  printf("acabou\n");
+
+return 0;
+}
