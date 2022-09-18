@@ -5,3 +5,9 @@
 - Malloc https://replit.com/@astrisc97/Malloc#main.c
 - Struct https://replit.com/@astrisc97/Struct-exemplo#main.c
 - Média https://replit.com/@astrisc97/Media-idade#main.c
+- Do while https://replit.com/@astrisc97/do-while-5#main.c
+- While https://replit.com/@astrisc97/while-1-a-10#main.c
+- Vetores https://replit.com/@astrisc97/vetores-5#main.c
+- Ponteiro https://replit.com/@astrisc97/ponteiro-aula-2#main.c
+- Soma & Media https://replit.com/@astrisc97/Prova-1#main.c
+- Para em num par https://replit.com/@astrisc97/parar-no-num-par#main.c
