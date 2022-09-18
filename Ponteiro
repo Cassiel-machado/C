@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) {
+  int vetor[] = {1 , 2, 3, 4, 5, 6};
+  int* p = vetor;
+  int i;
+  
+  /*printf("Valor Vetor: %d\n", vetor[0]);
+  printf("Valor P: %d\n", *p);
+  p++;
+  printf("Valor P: %d\n", *p);
+  *p = 1000;
+  printf("Valor P: %d\n", *p);*/
+  
+  for(i = 0;i < 6; i++, p++){
+    printf("Valor %d = %d\n", i, *p);
+  }
+  return 0;
+}
