@@ -1,0 +1,68 @@
+#include <malloc.h>
+#include <stdio.h>
+
+typedef struct No {
+  int valor;
+  struct No *noDir;
+  struct No *noEsq;
+} NO;
+
+void imprimir(NO* raiz){
+  if(raiz != NULL){
+    printf("%d", raiz->valor);
+    printf("[");
+    imprimir(raiz->noEsq);
+    imprimir(raiz->noDir);
+    printf("]");
+  }
+}
+
+
+
+NO *inserir(NO *raiz, NO *filho) {
+  printf("\n\nENTRANDO NA FUNCAO\n");
+  printf("FILHO:%d\n", filho->valor);
+
+  if (raiz == NULL) {
+    printf("\nRAIZ ATUAL AQUI EH NULA\n");
+    printf("PARADA QUANDO RAIZ EH NULA\n\n");
+    return filho;
+  }
+  printf("RAIZ ATUAL:%d\n", raiz->valor);
+  if (filho->valor > raiz->valor) {
+    printf("\nFILHO MAIOR QUE RAIZ\n");
+    raiz->noDir = inserir(raiz->noDir, filho);
+    printf("\nVALOR INSERIDO NA DIREITA\n");
+    printf("\nRAIZ ATUAL: %d\n", raiz->valor);
+  } else {
+    printf("\nFILHO MENOR QUE RAIZ\n");
+    raiz->noEsq = inserir(raiz->noEsq, filho);
+    printf("\nVALOR INSERIDO NA ESQUERDA\n");
+    printf("\nRAIZ ATUAL: %d\n", raiz->valor);
+  }
+
+  printf("RETORNANDO RAIZ %d", raiz->valor);
+
+  return raiz;
+}
+
+int main(void) {
+  NO *raiz = NULL;
+
+  int i;
+  for (i = 0; i < 10; i++) {
+    int valorQueOUsuarioInserir;
+    scanf("%d", &valorQueOUsuarioInserir);
+
+    NO *pFilho = (NO *)malloc(sizeof(NO));
+    pFilho->valor = valorQueOUsuarioInserir;
+    pFilho->noDir = NULL;
+    pFilho->noEsq = NULL;
+
+    raiz = inserir(raiz, pFilho);
+  }
+
+  printf("\n ARVORE FINAL: \n");
+  imprimir(raiz);
+  
+}
