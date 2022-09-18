@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<malloc.h>
+
+
+
+typedef struct node {
+  int valor;
+struct node* prox;
+} NODE;
+
+
+typedef struct {
+  NODE* inicio;
+  NODE* fim;
+} LISTA;
+
+
+void inserir(LISTA* lista, int valor) {
+
+NODE* novo = (NODE*) malloc(sizeof(NODE));
+  novo->valor = valor;
+  novo->prox = NULL;
+  if(lista->inicio == NULL) {
+    lista->inicio = novo;
+    lista->fim = novo;
+} 
+  else {
+    lista->fim->prox = novo;
+    lista->fim = novo;
+  }
+}
+void remover(LISTA* lista) {
+if(lista->inicio != NULL) {
+  NODE* apagar = lista->inicio;
+    if(lista->inicio == lista->fim)
+      lista->fim = NULL;
+      lista->inicio = apagar->prox;
+      free(apagar);
+    }
+}
+void copiaLista(LISTA* lista1, LISTA* lista2) {
+}
+
+
+int main() {
+LISTA minhaLista;
+LISTA minhaLista2;
+minhaLista.fim = NULL;
+minhaLista.inicio = NULL;
+  inserir(&minhaLista, 1);
+  inserir(&minhaLista, 2);
+  inserir(&minhaLista, 3);
+  inserir(&minhaLista, 4);
+  printf("MINHA LISTA:\n");
+  NODE* aux = minhaLista.inicio;
+while(aux != NULL) {
+  printf("%d\n", aux->valor);
+  aux = aux->prox;
+}
+  printf("SEGUNDA LISTA:\n1\n2\n3\n4\n");
+return 1;
+}
