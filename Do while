@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+  int num, Maiorpar= 0, Menorimpar= 9999, contadorpar= 0,contadorimpar= 0;
+  float mediapar, mediaimpar;
+  printf("O programa ira parar quando um numero negativo for inserido digite um numero:\n");
+  do {
+    scanf("%d", &num);
+    if(num >= 0) {
+      if(num % 2 == 0) {
+        mediapar+=num;
+        contadorpar++;
+        if(Maiorpar < num)
+          Maiorpar=num;
+      }
+      else if(num % 2 != 0) {
+        mediaimpar+=num;
+        contadorimpar++;
+        if(Menorimpar > num)
+          Menorimpar=num;
+      }
+    if(contadorpar == 0)
+      Maiorpar=contadorpar;
+    if(contadorimpar == 0)
+      Menorimpar=contadorimpar;
+    }
+  }
+  while(num >= 0);
+
+  printf("maior par = %d\n", Maiorpar);
+  printf("menor impar = %d\n", Menorimpar);
+  printf("media par = %.1f\n", mediapar/contadorpar);
+  printf("media impar = %.1f\n", mediaimpar/contadorimpar);
+
+  return 0;
+}
